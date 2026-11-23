@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class SectionCard extends StatelessWidget {
+class CustomSection extends StatelessWidget {
   final String title;
   final Widget child;
 
-  const SectionCard({
+  const CustomSection({
     super.key,
     required this.title,
     required this.child,

@@ -15,7 +15,7 @@ class ListMakananPage extends StatelessWidget {
     return Scaffold( 
         backgroundColor: bgColor,
         appBar: AppBar(
-          title: Text("List Makanan"),
+          title: Text("Home"),
           centerTitle: true,
           backgroundColor: bgColor,
           foregroundColor: Colors.white,

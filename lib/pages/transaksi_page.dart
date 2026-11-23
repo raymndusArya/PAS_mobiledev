@@ -9,7 +9,7 @@ class TransaksiPages extends StatelessWidget {
   static final formatAngka = NumberFormat.decimalPattern('id_ID');
   
   String Rp(num nilai) => 
-    'Rp.${formatAngka.format(nilai.round())}';
+    'Rp${formatAngka.format(nilai.round())}';
 
   final controller = Get.put(TransaksiController());
   static const Color bgColor = Color(0xFF2B2B2B);

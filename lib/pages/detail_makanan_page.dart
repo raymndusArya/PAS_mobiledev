@@ -42,7 +42,7 @@ class DetailMakananPages extends StatelessWidget {
           ),
 
           // buat nampilin detail
-          SectionCard(
+          CustomSection(
             title: 'Informasi',
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -69,7 +69,7 @@ class DetailMakananPages extends StatelessWidget {
           ),
 
           // Harga di detail
-          SectionCard(
+          CustomSection(
             title: 'Harga',
             child: Text(
               controller.makanan.harga,
@@ -81,7 +81,7 @@ class DetailMakananPages extends StatelessWidget {
           ),
 
           // Deskripsi di detail
-          SectionCard(
+          CustomSection(
             title: 'Deskripsi',
             child: Text(
               controller.makanan.deskripsi,
