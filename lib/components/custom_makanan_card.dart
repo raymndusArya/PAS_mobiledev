@@ -1,0 +1,83 @@
+import 'package:flutter/material.dart';
+import 'package:pas_mobiledev/models/makanan_models.dart';
+
+class CustomMakananCard extends StatelessWidget {
+  final MakananModel makanan;
+  final VoidCallback? onTap;
+  final Color cardColor;
+
+  const CustomMakananCard({
+    super.key,
+    required this.makanan,
+    this.onTap,
+    this.cardColor = const Color(0xFF3A3A3A),
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      color: cardColor,
+      elevation: 0,
+      margin: const EdgeInsets.only(bottom: 12),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      child: InkWell(
+        splashColor: Colors.white38,
+        highlightColor: Colors.white24,
+        splashFactory: InkRipple.splashFactory,
+        borderRadius: BorderRadius.circular(12),
+        onTap: onTap,
+        child: Padding(
+          padding: const EdgeInsets.all(10),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  Ink(
+                    width: 80,
+                    height: 80,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      image: DecorationImage(
+                        image: AssetImage(makanan.gambar),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 12),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        makanan.namaMakanan,
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                      SizedBox(height: 4),
+
+                      Text(
+                        makanan.harga,
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 191, 193, 190),
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              Icon(
+                Icons.arrow_forward_ios_rounded,
+                size: 16,
+                color: Colors.white54,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

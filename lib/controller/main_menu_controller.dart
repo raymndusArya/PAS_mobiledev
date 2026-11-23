@@ -1,0 +1,14 @@
+import 'package:get/state_manager.dart';
+import 'package:flutter/material.dart';
+import 'package:pas_mobiledev/menu/feat_menu.dart';
+import 'package:pas_mobiledev/menu/home_menu.dart';
+import 'package:pas_mobiledev/menu/profile_menu.dart';
+import 'package:pas_mobiledev/pages/list_makanan_page.dart';
+
+class MainMenuController extends GetxController {
+  final RxInt selectedIndex = 0.obs;
+  void changePage(int index) {
+    selectedIndex.value = index;
+  }
+  List<Widget> listPages = [ListMakananPage(), FeatMenu(), ProfileMenu()];
+} 
